@@ -4,3 +4,4 @@ transformers
 accelerate
 safetensors
 diffusers
+huggingface_hub
