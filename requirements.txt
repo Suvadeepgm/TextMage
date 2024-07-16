@@ -5,4 +5,4 @@ accelerate
 safetensors
 diffusers
 huggingface_hub
-cv2
+opencv-python
