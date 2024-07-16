@@ -8,6 +8,11 @@ Created on Tue Jul 16 10:01:13 2024
 import streamlit as st
 from diffusers import DiffusionPipeline
 import torch
+from huggingface_hub import login
+
+# Set your Hugging Face API key
+hf_api_key = "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"
+login(token=hf_api_key)
 
 # Initialize the model and move it to the GPU
 pipe = DiffusionPipeline.from_pretrained(
