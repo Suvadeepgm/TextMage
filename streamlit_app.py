@@ -1,35 +1,30 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Jul 16 10:01:13 2024
-
-@author: suvadeep
-"""
-
 import streamlit as st
-from diffusers import DiffusionPipeline
-import torch
-from huggingface_hub import login
+import requests
+from PIL import Image
+import io
 
-# Set your Hugging Face API key
-hf_api_key = "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"
-login(token=hf_api_key)
+# Hugging Face API URL and headers
+API_URL = "https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-xl-base-1.0"
+headers = {"Authorization": "Bearer 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"}
 
-# Initialize the model and move it to the GPU
-pipe = DiffusionPipeline.from_pretrained(
-    "stabilityai/stable-diffusion-xl-base-1.0", 
-    torch_dtype=torch.float16, 
-    use_safetensors=True, 
-    variant="fp16"
-)
-#pipe.to("cuda")
+def query(payload):
+    response = requests.post(API_URL, headers=headers, json=payload)
+    return response.content
 
-# Streamlit app
+# Streamlit app layout
 st.title("Image Generation with Stable Diffusion")
+st.write("Enter a prompt to generate an image:")
 
-# Prompt input
-prompt = st.text_input("Enter your prompt:")
-submitted = st.button('Submit', key=1)
-if submitted:
-   # with st.spinner("Generating image..."):
-    images = pipe(prompt=prompt).images[0]
-    st.image(images, caption=prompt)
+# Text input for the prompt
+prompt = st.text_input("Prompt", value="Astronaut riding a horse")
+
+if st.button("Generate Image"):
+    with st.spinner("Generating image..."):
+        image_bytes = query({"inputs": prompt})
+        image = Image.open(io.BytesIO(image_bytes))
+        
+        st.image(image, caption=f"Generated image for prompt: '{prompt}'")
+
+# Run Streamlit app
+if __name__ == "__main__":
+    st.write("App is ready to generate images.")
