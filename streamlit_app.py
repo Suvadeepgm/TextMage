@@ -4,8 +4,9 @@ from PIL import Image
 import io
 
 # Hugging Face API URL and headers
-API_URL = "https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-xl-base-1.0"
+#API_URL = "https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-xl-base-1.0"
 #API_URL = "https://api-inference.huggingface.co/models/fal/AuraFlow"
+API_URL = "https://api-inference.huggingface.co/models/runwayml/stable-diffusion-v1-5"
 headers = {"Authorization": "Bearer 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"}
 
 def query(payload):
