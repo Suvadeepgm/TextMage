@@ -27,4 +27,4 @@ if st.button("Generate Image"):
 
 # Run Streamlit app
 if __name__ == "__main__":
-    st.write("App is ready to generate images.")
+    #st.write("App is ready to generate images.")
