@@ -16,7 +16,7 @@ st.title("TextMage ")
 st.write("Image Generation from Text Prompt")
 
 # Text input for the prompt
-prompt = st.text_input("Prompt", value="Enter a prompt to generate an image")
+prompt = st.text_input("Enter a prompt to generate an image", value="")
 
 if st.button("Generate Image"):
     with st.spinner("Generating image..."):
