@@ -12,11 +12,11 @@ def query(payload):
     return response.content
 
 # Streamlit app layout
-st.title("TextMage: Image Generation from Text Prompt")
-st.write("Enter a prompt to generate an image:")
+st.title("TextMage ")
+st.write("Image Generation from Text Prompt")
 
 # Text input for the prompt
-prompt = st.text_input("Prompt", value="Astronaut riding a horse")
+prompt = st.text_input("Prompt", value="Enter a prompt to generate an image")
 
 if st.button("Generate Image"):
     with st.spinner("Generating image..."):
