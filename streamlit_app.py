@@ -12,7 +12,7 @@ def query(payload):
     return response.content
 
 # Streamlit app layout
-st.title("Image Generation with Stable Diffusion")
+st.title("TextMage: Image Generation from Text Prompt")
 st.write("Enter a prompt to generate an image:")
 
 # Text input for the prompt
