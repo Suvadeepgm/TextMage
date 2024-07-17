@@ -28,8 +28,8 @@ st.title("Image Generation with Stable Diffusion")
 
 # Prompt input
 prompt = st.text_input("Enter your prompt:")
-
-if prompt:
-    with st.spinner("Generating image..."):
-        images = pipe(prompt=prompt).images[0]
-        st.image(images, caption=prompt)
+submitted = st.button('Submit', key=1)
+if submitted:
+   # with st.spinner("Generating image..."):
+    images = pipe(prompt=prompt).images[0]
+    st.image(images, caption=prompt)
