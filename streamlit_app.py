@@ -21,7 +21,7 @@ pipe = DiffusionPipeline.from_pretrained(
     use_safetensors=True, 
     variant="fp16"
 )
-pipe.to("cuda")
+#pipe.to("cuda")
 
 # Streamlit app
 st.title("Image Generation with Stable Diffusion")
