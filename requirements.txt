@@ -5,5 +5,5 @@ accelerate
 safetensors
 diffusers
 huggingface_hub
-opencv-python
+opencv-python-headless
 torch
