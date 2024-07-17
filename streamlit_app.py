@@ -26,5 +26,5 @@ if st.button("Generate Image"):
         st.image(image, caption=f"Generated image for prompt: '{prompt}'")
 
 # Run Streamlit app
-if __name__ == "__main__":
+#if __name__ == "__main__":
     #st.write("App is ready to generate images.")
