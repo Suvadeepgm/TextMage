@@ -1,1 +1,1 @@
-Generates image based on Text Prompts - Using 
+Generates images based on Text Prompts - Using Stable Diffusion
